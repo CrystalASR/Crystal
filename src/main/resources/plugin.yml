@@ -1,0 +1,44 @@
+name: AdminTools
+version: 1.0.0
+main: me.admintools.AdminTools
+api-version: "1.21"
+description: Staff tools - invsee, vanish, freeze, punishments, logs
+commands:
+  invsee:      { description: View inventory (read-only), usage: "/invsee <player>", permission: admintools.invsee }
+  endersee:    { description: View ender chest (read-only), usage: "/endersee <player>", permission: admintools.endersee }
+  sinvsee:     { description: View + edit inventory, usage: "/sinvsee <player>", permission: admintools.sinvsee }
+  sendersee:   { description: View + edit ender chest, usage: "/sendersee <player>", permission: admintools.sendersee }
+  cps:         { description: Show player CPS, usage: "/cps <player>", permission: admintools.cps }
+  itp:         { description: Teleport to a player, usage: "/itp <player>", permission: admintools.itp }
+  tppos:       { description: Teleport to coordinates, usage: "/tppos <x> <y> <z> [world]", permission: admintools.tppos }
+  log:         { description: Block place/break logs, usage: "/log [radius|player]", permission: admintools.log }
+  vanish:      { description: Toggle vanish, usage: "/vanish <on|off>", permission: admintools.vanish }
+  invfreeze:   { description: Freeze a player's inventory, usage: "/invfreeze <player>", permission: admintools.invfreeze }
+  invunfreeze: { description: Unfreeze a player's inventory, usage: "/invunfreeze <player>", permission: admintools.invfreeze }
+  freeze:      { description: Freeze a player's movement, usage: "/freeze <player>", permission: admintools.freeze }
+  unfreeze:    { description: Unfreeze a player's movement, usage: "/unfreeze <player>", permission: admintools.freeze }
+  mute:        { description: Mute a player, usage: "/mute <player> <1s|1m|1h|1d|perm> [reason]", permission: admintools.mute }
+  unmute:      { description: Unmute a player, usage: "/unmute <player>", permission: admintools.mute }
+  ban:         { description: Ban a player, usage: "/ban <player> <1s|1m|1h|1d|perm> [reason]", permission: admintools.ban }
+  unban:       { description: Unban a player, usage: "/unban <player>", permission: admintools.ban }
+  warn:        { description: Warn a player (7 days), usage: "/warn <player> <reason>", permission: admintools.warn }
+  history:     { description: Punishment history, usage: "/history <player>", permission: admintools.history }
+permissions:
+  admintools.invsee:       { default: op }
+  admintools.endersee:     { default: op }
+  admintools.sinvsee:      { default: op }
+  admintools.sendersee:    { default: op }
+  admintools.cps:          { default: op }
+  admintools.itp:          { default: op }
+  admintools.tppos:        { default: op }
+  admintools.log:          { default: op }
+  admintools.vanish:       { default: op }
+  admintools.vanish.see:   { default: op, description: See vanished players }
+  admintools.vanish.onjoin: { default: false, description: Auto-vanish silently on join }
+  admintools.invfreeze:    { default: op }
+  admintools.freeze:       { default: op }
+  admintools.mute:         { default: op }
+  admintools.ban:          { default: op }
+  admintools.warn:         { default: op }
+  admintools.history:      { default: op }
+  admintools.colon.bypass: { default: false, description: Allow plugin:command syntax }
